@@ -1,0 +1,36 @@
+{
+    "name": "dyd-project",
+    "version": "0.0.1",
+    "author": "candraknes",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "patch": "bun src/database/patch.ts",
+        "clean": "rm -rf dist && echo 'Done.'",
+        "dev": "bun --watch src/index.ts",
+        "build": "bun build src/index.ts --minify --splitting --outdir=dist --target bun",
+        "compile": "bun build src/index.ts --compile --minify --splitting --outfile=dist/index",
+        "start": "bun run dist/index.js",
+        "build:start": "bun run build && bun run start"
+    },
+    "dependencies": {
+        "@elysiajs/cors": "^1.0.2",
+        "@elysiajs/swagger": "^1.0.5",
+        "@types/crypto-js": "^4.2.2",
+        "@types/lodash": "^4.17.7",
+        "@types/node": "^20.14.11",
+        "axios": "^1.6.8",
+        "elysia": "latest",
+        "logestic": "^1.1.1",
+        "nodemailer": "^6.9.13",
+        "pg": "^8.11.5",
+        "winston": "^3.13.0",
+        "xlsx": "^0.18.5",
+        "zod": "^3.23.6"
+    },
+    "devDependencies": {
+        "@types/nodemailer": "^6.4.15",
+        "@types/pg": "^8.11.6",
+        "bun-types": "latest"
+    },
+    "module": "src/index.js"
+}
